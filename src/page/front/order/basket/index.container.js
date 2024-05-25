@@ -1,5 +1,12 @@
+import { useState } from "react";
 import BasketUI from "./index.presenter";
 
 export default function Basket() {
-  return <BasketUI />;
+  const [checked, setChecked] = useState(true);
+
+  const onClickChecked = () => {
+    setChecked(!checked);
+  };
+
+  return <BasketUI checked={checked} onClickChecked={onClickChecked} />;
 }
