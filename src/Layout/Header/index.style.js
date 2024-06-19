@@ -61,17 +61,6 @@ export const Inner = styled.div`
   }
 `;
 
-export const Bottom = styled.nav`
-  background-color: white;
-  position: sticky !important;
-  z-index: 999;
-  width: 100%;
-  height: auto;
-  top: 0px;
-  left: 0;
-  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.05);
-`;
-
 export const Image = styled.img``;
 
 export const Search = styled.div`
@@ -90,12 +79,37 @@ export const Search = styled.div`
     border-radius: 100px;
     border: 1px solid #ddd;
     transition-duration: 0.3s;
+
+    &:hover {
+      border: 1px solid #1d1d1b;
+    }
+
+    &:focus {
+      outline: 0;
+      border: 1px solid #1d1d1b;
+    }
   }
-  input:hover {
-    border: 1px solid #1d1d1b;
+`;
+
+export const InputWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  input {
+    width: 100%;
+    height: 100%;
   }
-  input:focus {
-    outline: 0px solid #1d1d1b;
+
+  button {
+    background: url(https://firebasestorage.googleapis.com/v0/b/project-90a5b.appspot.com/o/Main%2Ficon%2Ficon_search_21.svg?alt=media&token=9d81e838-d259-400a-a56a-e1af6f79daec)
+      no-repeat center center;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    cursor: pointer;
   }
 `;
 
@@ -125,6 +139,212 @@ export const Icon_login = styled.div`
       margin-top: 6px;
     }
   }
+`;
+
+export const SearchWrapper = styled.div`
+  display: ${(props) => (props.isDropdownVisible ? "flex" : "none")};
+  border: 1px solid #eee;
+  background: white;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  font-size: 16px;
+  top: calc(100% + 10px);
+`;
+
+export const RecentWrapper = styled.div`
+  border-right: 1px solid #eee;
+  div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 20px;
+
+    button {
+      font-size: 15px;
+      color: #888;
+      background-color: transparent;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  ul {
+    color: #333;
+    li {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      a {
+        position: relative;
+
+        &::after {
+          content: "";
+          width: 0;
+          height: 1px;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background-color: #333;
+          transition: 0.3s;
+        }
+
+        &:hover {
+          &::after {
+            content: "";
+            width: calc(100% + 10px);
+            height: 1px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: #333;
+            transition: 0.3s;
+          }
+        }
+      }
+
+      button {
+        cursor: pointer;
+        background: url(https://firebasestorage.googleapis.com/v0/b/project-90a5b.appspot.com/o/Main%2Ficon%2Ficon_remove_16.png?alt=media&token=e7311ca7-8f04-42ed-af8b-e23228c8ae04)
+          no-repeat center center;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  padding: 29px 30px;
+  width: 238px;
+`;
+
+export const RecommendedWrapper = styled.div`
+  min-height: 457px;
+  padding: 29px 30px;
+  width: 238px;
+  border-right: 1px solid #eee;
+
+  ul {
+    margin-top: 20px;
+
+    li {
+      color: #d3233a;
+      font-size: 15px;
+      margin-bottom: 40px;
+
+      a {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        position: relative;
+
+        &::after {
+          display: inline-block;
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 1px;
+          left: 0;
+          bottom: 0;
+          background-color: #1d1d1b;
+          transition: 0.3s;
+        }
+
+        &:hover::after {
+          display: block;
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 1px;
+          bottom: 0;
+          left: 0;
+          background-color: #1d1d1b;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+`;
+
+export const PopularWrapper = styled.div`
+  padding: 29px 30px;
+  width: 238px;
+
+  div {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    span {
+      font-size: 14px;
+      color: #aaa;
+    }
+  }
+
+  ul {
+    padding-top: 20px;
+
+    li {
+      margin-bottom: 20px;
+
+      span {
+        display: inline-block;
+        width: 20px;
+        font-weight: 700;
+        margin-right: 7px;
+        text-align: center;
+      }
+
+      a {
+        position: relative;
+
+        &::after {
+          display: block;
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 1px;
+          bottom: 1px;
+          left: 0;
+          background-color: #1d1d1b;
+          transition: 0.3s;
+        }
+
+        &:hover::after {
+          display: block;
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 1px;
+
+          left: 0;
+          background-color: #1d1d1b;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+`;
+
+export const KeywordsTop3 = styled.span`
+  font-size: 15px;
+  color: #d3233a;
+`;
+
+export const KeywordsIndex = styled.span`
+  font-size: 15px;
+`;
+
+export const Bottom = styled.nav`
+  background-color: white;
+  position: sticky !important;
+  z-index: 999;
+  width: 100%;
+  height: auto;
+  top: 0px;
+  left: 0;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.05);
 `;
 
 export const Icon_mypage = styled.div`
@@ -165,6 +385,7 @@ export const Icon_cart = styled.div`
         no-repeat center top;
       background-size: contain;
     }
+
     p {
       letter-spacing: -1px;
       margin-top: 6px;
@@ -172,25 +393,102 @@ export const Icon_cart = styled.div`
   }
 `;
 
-export const Category_All = styled.button`
+export const Category_All = styled.div`
   display: flex;
   align-items: center;
   background-color: white;
   border: none;
   font-size: inherit;
-  height: 100%;
   height: 75px;
+  cursor: pointer;
+  position: relative;
+  z-index: 10000;
+
+  &:hover > div ul:first-of-type {
+    display: block;
+  }
 
   span {
-    display: inline-block;
-    width: 22px;
-    height: 22px;
-    background: url("https://firebasestorage.googleapis.com/v0/b/project-90a5b.appspot.com/o/menu_.svg?alt=media&token=a9e34bc1-8fb3-43db-b597-d6c7fa87fb69")
-      no-repeat center top;
-    background-size: contain;
-    margin-right: 8px;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      background: url("https://firebasestorage.googleapis.com/v0/b/project-90a5b.appspot.com/o/menu_.svg?alt=media&token=a9e34bc1-8fb3-43db-b597-d6c7fa87fb69")
+        no-repeat center top;
+      background-size: contain;
+      margin-right: 8px;
+    }
   }
 `;
+
+export const CategoryWrapper = styled.ul`
+  display: none;
+  font-size: 16px;
+  width: 240px;
+  padding: 15px 0;
+  border: 1px solid #e4e4e4;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  width: 240px;
+  max-height: 780px;
+  height: calc(100vh - 175px);
+  top: 75px;
+  left: 0;
+  background-color: white;
+`;
+
+export const Category = styled.li`
+  padding: 12px 20px;
+  line-height: 1.55;
+  width: 240px;
+  background-color: white;
+  cursor: pointer;
+  margin-right: 30px;
+
+  &:hover {
+    color: #d3233a;
+    font-weight: 700;
+  }
+
+  &:hover ul {
+    display: block;
+  }
+`;
+
+export const SubcategoryWrapper = styled.ul`
+  position: absolute;
+  top: 75px;
+  left: 239px;
+  width: 240px;
+  height: 100%;
+  max-height: 780px;
+  height: calc(100vh - 175px);
+  border: 1px solid #e4e4e4;
+  padding: 15px 0;
+  color: #d3233a;
+  margin-right: 10px;
+  background-color: white;
+`;
+
+export const Subcategory = styled.li`
+  width: 240px;
+  font-weight: normal;
+  padding: 12px 20px;
+  line-height: 1.55;
+  word-break: keep-all;
+  color: #1d1d1b;
+  font-weight: normal;
+  margin-right: 30px;
+  font-size: 16px;
+
+  &:hover {
+    color: #d3233a;
+    font-weight: 700;
+  }
+`;
+
 export const category_new = styled.li``;
 
 export const category_only = styled.li`

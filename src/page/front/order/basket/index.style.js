@@ -113,11 +113,15 @@ export const CheckBox = styled.label`
 `;
 
 export const rightWrapper = styled.div`
-  width: 390px;
-  margin-left: 60px;
-  border: 1px solid #e4e4e4;
-  border-radius: 6px;
-  overflow: hidden;
+  section {
+    width: 390px;
+    margin-left: 60px;
+    border: 1px solid #e4e4e4;
+    border-radius: 6px;
+    overflow: hidden;
+    position: sticky;
+    top: 95px;
+  }
 `;
 
 export const TopWrapper = styled.div`

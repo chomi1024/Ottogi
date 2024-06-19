@@ -1,439 +1,291 @@
-export const categories = {
-  noodle: {
-    name: "라면/컵누들/곤누들",
-    subcategories: {
-      bagRamen: {
-        name: "봉지라면",
-      },
-      cupRamen: {
-        name: "컵라면",
-      },
-      cupNoodle: {
-        name: "컵누들",
-      },
-      ramenSoup: {
-        name: "라면스프",
-      },
-      konnoodle: {
-        name: "곤누들",
-      },
-      japchae: {
-        name: "잡채",
-      },
-      sarimyeon: {
-        name: "사리면",
-      },
-    },
+export const categories = [
+  {
+    categoryId: 1,
+    categoryName: "원쁠원",
   },
-  rice: {
-    name: "밥/죽/누룽지",
-    subcategories: {
-      instantRice: {
-        name: "즉석밥",
-      },
-      cupRice: {
-        name: "컵밥",
-      },
-      porridge: {
-        name: "죽",
-      },
-      multigrainRice: {
-        name: "잡곡밥",
-      },
-      nurungji: {
-        name: "누룽지",
-      },
-      frozenFriedrice: {
-        name: "냉동볶음밥",
-      },
-      bobFriend: {
-        name: "밥친구",
-      },
-      konjacRice: {
-        name: "곤약밥",
-      },
-      ottogiRice: {
-        name: "오뚜기쌀",
-      },
-      riceBall: {
-        name: "주먹밥/무스비",
-      },
-    },
+  {
+    categoryId: 2,
+    categoryName: "무료배송",
   },
-  microwaveMeal: {
-    name: "카레/짜장/간편렌지",
-    subcategories: {
-      CurryJajangHaice: {
-        name: "카레/짜장/하이스",
-      },
-      Meat: {
-        name: "미트/햄버그/치킨/탕수완자",
-      },
-      ricebowlSauce: {
-        name: "덮밥소스",
-      },
-      simpleSteamed: {
-        name: "간편찜",
-      },
-    },
+  {
+    categoryId: 3,
+    categoryName: "즉시/쿠폰 할인 상품",
   },
-  sauce: {
-    name: "소스/드레싱/양념/식초",
-    subcategories: {
-      ketchup: {
-        name: "케챂/마요네스/드레싱",
+  {
+    categoryId: 4,
+    categoryName: "라면/컵누들/곤누들",
+    subcategories: [
+      {
+        subcategoryId: 1,
+        subcategoryName: "전체",
       },
-      tabasco: {
-        name: "타바스코/이금기/마라장",
-      },
-      vinegar: {
-        name: "식초/미향",
-      },
-      simpleSauce: {
-        name: "간편소스/볶음/조림 양념",
-      },
-      pepper: {
-        name: "후추/허브솔트/겨자/와사비",
-      },
-      meatSauce: {
-        name: "육류소스/양념/비빔장/초고추장",
-      },
-      pastaSauce: {
-        name: "파스타/스파게티 소스",
-      },
-      steakSauce: {
-        name: "스테이크/돈까스소스",
-      },
-      stewSeasoning: {
-        name: "탕/찌개양념",
-      },
-      cornSyrup: {
-        name: "물엿/쌀엿/올리고당/요리청",
-      },
-    },
+      { subcategoryId: 2, subcategoryName: "봉지라면" },
+      { subcategoryId: 3, subcategoryName: "컵라면" },
+      { subcategoryId: 4, subcategoryName: "컵누들" },
+      { subcategoryId: 5, subcategoryName: "라면스프" },
+      { subcategoryId: 6, subcategoryName: "곤누들" },
+      { subcategoryId: 7, subcategoryName: "잡채" },
+      { subcategoryId: 8, subcategoryName: "사리면" },
+    ],
   },
-  rice: {
-    name: "밥/죽/누룽지",
-    subcategories: {
-      all: {
-        name: "전체",
+  {
+    categoryId: 5,
+    categoryName: "밥/죽/누룽지",
+    subcategories: [
+      {
+        subcategoryId: 1,
+        subcategoryName: "전체",
       },
-      instantRice: {
-        name: "즉석밥",
+      { subcategoryId: 2, subcategoryName: "즉석밥" },
+      {
+        subcategoryId: 3,
+        subcategoryName: "컵밥",
       },
-      cupRice: {
-        name: "컵밥",
-      },
-      porridge: {
-        name: "죽",
-      },
-      multigrainRice: {
-        name: "잡곡밥",
-      },
-      nurungji: {
-        name: "누룽지",
-      },
-      frozenFriedrice: {
-        name: "냉동볶음밥",
-      },
-      bobFriend: {
-        name: "밥친구",
-      },
-      konjacRice: {
-        name: "곤약밥",
-      },
-      ottogiRice: {
-        name: "오뚜기쌀",
-      },
-      riceBall: {
-        name: "주먹밥/무스비",
-      },
-    },
+      { subcategoryId: 4, subcategoryName: "죽" },
+      { subcategoryId: 5, subcategoryName: "잡곡밥" },
+      { subcategoryId: 6, subcategoryName: "누룽지" },
+      { subcategoryId: 7, subcategoryName: "냉동볶음밥" },
+      { subcategoryId: 8, subcategoryName: "밥친구" },
+      { subcategoryId: 9, subcategoryName: "곤약밥" },
+      { subcategoryId: 10, subcategoryName: "오뚜기밥" },
+      { subcategoryId: 11, subcategoryName: "주먹밥/무스비" },
+    ],
   },
-  soup: {
-    name: "탕/국/찌개/간편조리",
-    subcategories: {
-      stewSoup: {
-        name: "탕국찌개",
+  {
+    categoryId: 6,
+    categoryName: "카레/짜장/간편렌지",
+    subcategories: [
+      {
+        subcategoryId: 1,
+        subcategoryName: "전체",
       },
-      simpleSoup: {
-        name: "간편국/육수",
+      { subcategoryId: 2, subcategoryName: "카레/짜장/하이스" },
+      {
+        subcategoryId: 3,
+        subcategoryName: "미트/햄버그/치킨/탕수완자",
       },
-      grilledFish: {
-        name: "생선구이",
-      },
-      multigrainRice: {
-        name: "브리또/크로크무슈",
-      },
-      burrito: {
-        name: "안주/튀김",
-      },
-      mealKit: {
-        name: "밀키트",
-      },
-      easyCooking: {
-        name: "간편조리",
-      },
-      porkCutlet: {
-        name: "돈까스",
-      },
-      kalguksu: {
-        name: "칼국수",
-      },
-    },
+      { subcategoryId: 4, subcategoryName: "덮밥소스" },
+      { subcategoryId: 5, subcategoryName: "간편찜" },
+    ],
   },
-  pizza: {
-    name: "피자/만두/치킨",
-    subcategories: {
-      pizza: {
-        name: "피자",
+  {
+    categoryId: 7,
+    categoryName: "소스/드레싱/양념/식초",
+    subcategories: [
+      {
+        subcategoryId: 1,
+        subcategoryName: "전체",
       },
-      dumpling: {
-        name: "만두",
+      { subcategoryId: 2, subcategoryName: "케챂/마요네즈/드레싱" },
+      {
+        subcategoryId: 3,
+        subcategoryName: "타바스코/이금기/마라장",
       },
-      chicken: {
-        name: "치킨",
-      },
-      dimSum: {
-        name: "딤섬",
-      },
-      dumplingSkin: {
-        name: "만두피",
-      },
-      pickle: {
-        name: "피클",
-      },
-      tortilla: {
-        name: "또띠아",
-      },
-    },
+      { subcategoryId: 4, subcategoryName: "식초/미향" },
+      { subcategoryId: 5, subcategoryName: "간편소스/볶음/조림 양념" },
+      { subcategoryId: 6, subcategoryName: "후추/허브솔트/겨자/와사비" },
+      { subcategoryId: 7, subcategoryName: "육류소스/양념/비빔장/초고추장" },
+      { subcategoryId: 8, subcategoryName: "파스타/스파게티 소스" },
+      { subcategoryId: 9, subcategoryName: "스테이크/돈까스소스" },
+      { subcategoryId: 10, subcategoryName: "탕/찌개양념" },
+      { subcategoryId: 11, subcategoryName: "물엿/쌀엿/올리고당/요리청" },
+    ],
   },
-  pasta: {
-    name: "파스타/스프/리조또",
-    subcategories: {
-      pastaSauce: {
-        name: "파스타/스파게티 소스",
+  {
+    categoryId: 8,
+    categoryName: "탕/국/찌개/간편조리",
+    subcategories: [
+      {
+        subcategoryId: 1,
+        subcategoryName: "전체",
       },
-      pastaNoodles: {
-        name: "파스타/스파게티 면",
+      { subcategoryId: 2, subcategoryName: "탕국찌개" },
+      {
+        subcategoryId: 3,
+        subcategoryName: "간편국/육수",
       },
-      soup: {
-        name: "스프",
-      },
-      risotto: {
-        name: "리조또",
-      },
-      gnocchi: {
-        name: "뇨끼",
-      },
-    },
+      { subcategoryId: 4, subcategoryName: "생선구이" },
+      { subcategoryId: 5, subcategoryName: "브리또/크로크무슈" },
+      { subcategoryId: 6, subcategoryName: "안주/튀김" },
+      { subcategoryId: 7, subcategoryName: "밀키트" },
+      { subcategoryId: 8, subcategoryName: "간편조리" },
+      { subcategoryId: 9, subcategoryName: "돈까스" },
+      { subcategoryId: 10, subcategoryName: "칼국수" },
+    ],
   },
-  powder: {
-    name: "가루/향신료",
-    subcategories: {
-      Curry: {
-        name: "카레/짜장",
+  {
+    categoryId: 9,
+    categoryName: "피자/만두/치킨",
+    subcategories: [
+      {
+        subcategoryId: 1,
+        subcategoryName: "전체",
       },
-      friedFood: {
-        name: "튀김/부침/빵가루",
+      { subcategoryId: 2, subcategoryName: "피자" },
+      {
+        subcategoryId: 3,
+        subcategoryName: "만두",
       },
-      powderedPorridge: {
-        name: "분말죽",
-      },
-      heiss: {
-        name: "하이스",
-      },
-      cookingPowder: {
-        name: "요리용가루",
-      },
-      spice: {
-        name: "향신료",
-      },
-    },
+      { subcategoryId: 4, subcategoryName: "치킨" },
+      { subcategoryId: 5, subcategoryName: "딤섬" },
+      { subcategoryId: 6, subcategoryName: "만두피" },
+      { subcategoryId: 5, subcategoryName: "피클" },
+      { subcategoryId: 5, subcategoryName: "또띠아" },
+    ],
   },
-  can: {
-    name: "캔/통조림/오일",
-    subcategories: {
-      tuna: {
-        name: "참치",
+  {
+    categoryId: 10,
+    categoryName: "파스타/스프/리조또",
+    subcategories: [
+      {
+        subcategoryId: 1,
+        subcategoryName: "전체",
       },
-      sweetCorn: {
-        name: "스위트콘/과일통조림",
+      { subcategoryId: 2, subcategoryName: "파스타/스파게티 소스" },
+      {
+        subcategoryId: 3,
+        subcategoryName: "파스타/스파게티 면",
       },
-      sesameOil: {
-        name: "참기름/들기름/고추맛기름/볶음참깨",
-      },
-      ham: {
-        name: "햄",
-      },
-      soybeanOil: {
-        name: "콩기름/옥수수유",
-      },
-      pacificSaury: {
-        name: "꽁치/고등어",
-      },
-      oliveOil: {
-        name: "올리브유",
-      },
-      canolaOil: {
-        name: "카놀라유",
-      },
-      grapeseedOil: {
-        name: "포도씨유",
-      },
-      sunflowerOil: {
-        name: "해바라기유",
-      },
-    },
+      { subcategoryId: 4, subcategoryName: "스프" },
+      { subcategoryId: 5, subcategoryName: "리조또" },
+      { subcategoryId: 6, subcategoryName: "뇨끼" },
+    ],
   },
-  seaweed: {
-    name: "김/미역/수산물",
-    subcategories: {
-      seaweed: {
-        name: "미역",
+  {
+    categoryId: 11,
+    categoryName: "가루/향신료",
+    subcategories: [
+      {
+        subcategoryId: 1,
+        subcategoryName: "전체",
       },
-      Kelp: {
-        name: "다시마",
+      {
+        subcategoryId: 2,
+        subcategoryName: "카레/짜장",
       },
-      laver: {
-        name: "김",
-      },
-    },
+      { subcategoryId: 3, subcategoryName: "간편믹스" },
+      { subcategoryId: 4, subcategoryName: "튀김/부침/빵가루" },
+      { subcategoryId: 5, subcategoryName: "분말죽" },
+      { subcategoryId: 6, subcategoryName: "하이스" },
+      { subcategoryId: 7, subcategoryName: "요리용가루" },
+      { subcategoryId: 8, subcategoryName: "향신료" },
+    ],
   },
-  jam: {
-    name: "쨈/시럽/다류/마가린",
-    subcategories: {
-      powderedTea: {
-        name: "분말차",
+  {
+    categoryId: 12,
+    categoryName: "캔/통조림/오일",
+    subcategories: [
+      {
+        subcategoryId: 1,
+        subcategoryName: "전체",
       },
-      jam: {
-        name: "쨈",
+      { subcategoryId: 2, subcategoryName: "참치" },
+      {
+        subcategoryId: 3,
+        subcategoryName: "스위트콘/과일통조림",
       },
-      syrup: {
-        name: "시럽",
+      {
+        subcategoryId: 4,
+        subcategoryName: "참기름/들기름/고추맛기름/볶음참깨",
       },
-      liquidTea: {
-        name: "액상차",
-      },
-      leachTea: {
-        name: "침출차",
-      },
-      marmalade: {
-        name: "마말레이드",
-      },
-      margarine: {
-        name: "마가린",
-      },
-      cheese: {
-        name: "치즈",
-      },
-      butter: {
-        name: "버터",
-      },
-    },
+      { subcategoryId: 5, subcategoryName: "햄" },
+      { subcategoryId: 6, subcategoryName: "콩기름/옥수수유" },
+      { subcategoryId: 7, subcategoryName: "꽁치/고등어" },
+      { subcategoryId: 8, subcategoryName: "올리브유" },
+      { subcategoryId: 9, subcategoryName: "카놀라유" },
+      { subcategoryId: 10, subcategoryName: "포도씨유" },
+      { subcategoryId: 11, subcategoryName: "해바라기유" },
+    ],
   },
-  tteokbokki: {
-    name: "떡볶이/핫도그/간식",
-    subcategories: {
-      chip: {
-        name: "스낵",
+  {
+    categoryId: 13,
+    categoryName: "김/미역/수산물",
+    subcategories: [
+      {
+        subcategoryId: 1,
+        subcategoryName: "전체",
       },
-      hotdog: {
-        name: "핫도그",
+      { subcategoryId: 2, subcategoryName: "미역" },
+      {
+        subcategoryId: 3,
+        subcategoryName: "다시마",
       },
-      tteokgukRicecake: {
-        name: "떡국떡",
+      {
+        subcategoryId: 4,
+        subcategoryName: "김",
       },
-      snac: {
-        name: "간식",
-      },
-      tteokbokki: {
-        name: "떡볶이",
-      },
-      tteokbokkiSauce: {
-        name: "떡볶이 소스",
-      },
-    },
+    ],
   },
-  noodles: {
-    name: "국수/당면/면류",
-    subcategories: {
-      noodle: {
-        name: "국수/국수장국",
+  {
+    categoryId: 14,
+    categoryName: "쨈/시럽/다류/마가린",
+    subcategories: [
+      {
+        subcategoryId: 1,
+        subcategoryName: "전체",
       },
-      cellophaneNoodle: {
-        name: "당면",
+      { subcategoryId: 2, subcategoryName: "분말차" },
+      {
+        subcategoryId: 3,
+        subcategoryName: "쨈",
       },
-      Sarimyeon: {
-        name: "사리면",
+      {
+        subcategoryId: 4,
+        subcategoryName: "시럽",
       },
-      pasta: {
-        name: "파스타/스파게티",
-      },
-      coldNoodles: {
-        name: "물/비빔냉면",
-      },
-      jjolmyeon: {
-        name: "쫄면",
-      },
-      jjajang: {
-        name: "짜장짬뽕",
-      },
-      Udon: {
-        name: "우동",
-      },
-      scrollYoybeanNoodles: {
-        name: "콩국수",
-      },
-    },
+      { subcategoryId: 5, subcategoryName: "액상차" },
+      { subcategoryId: 6, subcategoryName: "침출차" },
+      { subcategoryId: 7, subcategoryName: "마말레이드" },
+      { subcategoryId: 8, subcategoryName: "마가린" },
+      { subcategoryId: 9, subcategoryName: "치즈" },
+      { subcategoryId: 10, subcategoryName: "버터" },
+    ],
   },
-  giftSet: {
-    name: "강황환/홍삼/프로틴/선물세트",
-    subcategories: {
-      natto: {
-        name: "낫또",
+  {
+    categoryId: 15,
+    categoryName: "떡볶이/핫도그/간식",
+    subcategories: [
+      {
+        subcategoryId: 1,
+        subcategoryName: "전체",
       },
-      giftSet: {
-        name: "선물세트",
+      { subcategoryId: 2, subcategoryName: "스낵" },
+      {
+        subcategoryId: 3,
+        subcategoryName: "핫도그",
       },
-      ottogift: {
-        name: "오뚜기프트",
+      {
+        subcategoryId: 4,
+        subcategoryName: "떡국떡",
       },
-      ganghwangPill: {
-        name: "백세강황환",
-      },
-      redGinseng: {
-        name: "홍삼",
-      },
-      handSanitizer: {
-        name: "손소독액",
-      },
-      disinfectant: {
-        name: "살균소독제",
-      },
-      protein: {
-        name: "프로틴",
-      },
-    },
+      { subcategoryId: 5, subcategoryName: "간식" },
+      { subcategoryId: 6, subcategoryName: "떡볶이" },
+      { subcategoryId: 7, subcategoryName: "떡볶이소스" },
+    ],
   },
-  goods: {
-    name: "굿즈",
-    subcategories: {
-      householdGoods: {
-        name: "생활용품",
+  {
+    categoryId: 16,
+    categoryName: "떡볶이/핫도그/간식",
+    subcategories: [
+      {
+        subcategoryId: 1,
+        subcategoryName: "전체",
       },
-      accessory: {
-        name: "악세서리",
+      { subcategoryId: 2, subcategoryName: "스낵" },
+      {
+        subcategoryId: 3,
+        subcategoryName: "핫도그",
       },
-      character: {
-        name: "캐릭터 굿즈",
+      {
+        subcategoryId: 4,
+        subcategoryName: "떡국떡",
       },
-      fashionClothes: {
-        name: "패션의류",
-      },
-    },
+      { subcategoryId: 5, subcategoryName: "간식" },
+      { subcategoryId: 6, subcategoryName: "떡볶이" },
+      { subcategoryId: 7, subcategoryName: "떡볶이소스" },
+    ],
   },
-};
+];
 
 export const product = [
   {

@@ -14,9 +14,24 @@ export default function BasketUI(props) {
           <B.ContentsWrapper>
             <B.leftWrapper>
               <B.TapmenuWrapper>
-                <B.tap active={true}>일반배송{}</B.tap>
-                <B.tap>선물하기🎁{}</B.tap>
-                <B.tap>마일리지{}</B.tap>
+                <B.tap
+                  active={props.active[0]}
+                  onClick={() => props.onClickActive(0)}
+                >
+                  일반배송{0}
+                </B.tap>
+                <B.tap
+                  active={props.active[1]}
+                  onClick={() => props.onClickActive(1)}
+                >
+                  선물하기🎁{0}
+                </B.tap>
+                <B.tap
+                  active={props.active[2]}
+                  onClick={() => props.onClickActive(2)}
+                >
+                  마일리지{0}
+                </B.tap>
               </B.TapmenuWrapper>
 
               <B.BoxWrapper>
@@ -39,43 +54,45 @@ export default function BasketUI(props) {
               </B.BoxWrapper>
 
               {props.cart || <CartFalse />}
-              {/* {props.cart && <CartTrue/>} */}
+              {props.cart && <CartTrue />}
             </B.leftWrapper>
 
             <B.rightWrapper>
-              <B.TopWrapper>
-                <h3>상품금액</h3>
-                <ul>
-                  <li>
-                    총 상품금액 <span>0원</span>
-                  </li>
-                  <li>
-                    총 할인금액<span>0원</span>
-                  </li>
-                  <li>
-                    총 배송비<span>0원</span>
-                  </li>
-                </ul>
-
-                <div>
-                  <div>
-                    <strong>결제 예상금액 </strong>
-                    <h3>{}원</h3>
-                  </div>
+              <section>
+                <B.TopWrapper>
+                  <h3>상품금액</h3>
                   <ul>
                     <li>
-                      · 무료배송 혜택 상품 및 배송 유형별 30,000원 이상 구매 시
-                      무료배송입니다.
+                      총 상품금액 <span>0원</span>
                     </li>
                     <li>
-                      · 배송 유형 간 교차 합계 금액은 무료배송에 적용되지
-                      않습니다. (상온 배송+저온 배송 합계 30,000원 무료배송불가)
+                      총 할인금액<span>0원</span>
+                    </li>
+                    <li>
+                      총 배송비<span>0원</span>
                     </li>
                   </ul>
-                </div>
-              </B.TopWrapper>
 
-              <B.Button>{}원 주문하기</B.Button>
+                  <div>
+                    <div>
+                      <strong>결제 예상금액 </strong>
+                      <h3>{}원</h3>
+                    </div>
+                    <ul>
+                      <li>
+                        · 무료배송 혜택 상품 및 배송 유형별 30,000원 이상 구매
+                        시 무료배송입니다.
+                      </li>
+                      <li>
+                        · 배송 유형 간 교차 합계 금액은 무료배송에 적용되지
+                        않습니다. (상온 배송+저온 배송 합계 30,000원
+                        무료배송불가)
+                      </li>
+                    </ul>
+                  </div>
+                </B.TopWrapper>
+                <B.Button>{}원 주문하기</B.Button>
+              </section>
             </B.rightWrapper>
           </B.ContentsWrapper>
         </B.BasketWrapper>

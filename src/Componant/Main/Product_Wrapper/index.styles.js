@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const Contents = styled.div`
   margin: ${(props) => props.margin || ""};
   display: flex;
+  align-items: flex-end;
   flex-wrap: wrap;
   justify-content: space-between;
 `;
@@ -31,6 +32,7 @@ export const Image_Wrapper = styled.div`
     position: relative;
     width: 100%;
     overflow: hidden;
+    height: 100%;
 
     &:hover {
       transition: 0.2s;
@@ -43,6 +45,7 @@ export const Image_Wrapper = styled.div`
       transition: 0.2s;
       width: 100%;
       object-fit: cover;
+      height: 100%;
     }
   }
 `;
@@ -61,7 +64,7 @@ export const Soldout = styled.div`
 
 export const Number = styled.p`
   position: absolute;
-  z-index: 999;
+  z-index: 9;
   top: 20px;
   left: 10px;
   color: #d3233a;

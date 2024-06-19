@@ -1,7 +1,7 @@
 import Link from "next/link";
 import * as H from "./index.style";
 
-export default function LayoutFooterUI() {
+export default function LayoutHeaderUI(props) {
   return (
     <>
       <H.Top>
@@ -14,9 +14,79 @@ export default function LayoutFooterUI() {
             </Link>
           </h1>
 
-          <H.Search>
-            <input type="text" placeholder="라면은 역시 오뚜기 라면~🍜" />
+          <H.Search ref={props.wrapperRef}>
+            <H.InputWrapper>
+              <form>
+                <input
+                  type="text"
+                  placeholder="라면은 역시 오뚜기 라면~🍜"
+                  onClick={props.handleInputClick}
+                />
+                <button />
+              </form>
+            </H.InputWrapper>
+
+            <H.SearchWrapper isDropdownVisible={props.isDropdownVisible}>
+              {props.searchKeywords.length == 0 || (
+                <H.RecentWrapper>
+                  <div>
+                    <h4>최근 검색어</h4>
+                    <button onClick={props.onClickAllDelete}>전체 삭제</button>
+                  </div>
+                  <ul>
+                    {props.searchKeywords?.map((el, index) => (
+                      <li key={index}>
+                        <Link href="">
+                          <a>{el}</a>
+                        </Link>
+                        <button onClick={() => props.onClickDelete(index)} />
+                      </li>
+                    ))}
+                  </ul>
+                </H.RecentWrapper>
+              )}
+
+              <H.RecommendedWrapper>
+                <h4>추천 검색어</h4>
+                <ul>
+                  {props.recommendKeywords?.map((el, index) => (
+                    <li key={index}>
+                      <Link href="">
+                        <a>{el.length > 17 ? el.substr(0, 16) + "..." : el}</a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </H.RecommendedWrapper>
+
+              <H.PopularWrapper>
+                <div>
+                  <h4>인기 검색어</h4>
+                  <span>{props.Today.toLocaleDateString()}기준</span>
+                </div>
+                <ul>
+                  {props.PopularKeywords?.map((el, index) =>
+                    index <= 2 ? (
+                      <li key={index}>
+                        <H.KeywordsTop3>{index + 1}</H.KeywordsTop3>
+                        <Link href="">
+                          <a>{el}</a>
+                        </Link>
+                      </li>
+                    ) : (
+                      <li key={index}>
+                        <H.KeywordsIndex>{index + 1}</H.KeywordsIndex>
+                        <Link href="">
+                          <a>{el}</a>
+                        </Link>
+                      </li>
+                    )
+                  )}
+                </ul>
+              </H.PopularWrapper>
+            </H.SearchWrapper>
           </H.Search>
+
           <H.Icon>
             <H.Icon_login>
               <Link href="/front/auth/guest_login">
@@ -49,7 +119,37 @@ export default function LayoutFooterUI() {
       <H.Bottom>
         <H.Inner>
           <H.Category_All>
-            <span /> 전체 카테고리
+            <span>전체 카테고리</span>
+
+            <div>
+              <H.CategoryWrapper>
+                {props.categories.map((category, index) => (
+                  <H.Category
+                    key={index}
+                    onMouseEnter={() => props.handleMouseEnter(index)}
+                    onMouseLeave={props.handleMouseLeave}
+                  >
+                    {category.categoryName}
+                  </H.Category>
+                ))}
+              </H.CategoryWrapper>
+
+              {props.isSubcategoryVisible &&
+                props.hoveredCategoryIndex !== null && (
+                  <H.SubcategoryWrapper
+                    onMouseEnter={props.handleSubcategoryEnter}
+                    onMouseLeave={props.handleMouseLeave}
+                  >
+                    {props.categories[
+                      props.hoveredCategoryIndex
+                    ].subcategories?.map((subcategory) => (
+                      <H.Subcategory key={subcategory.subcategoryId}>
+                        {subcategory.subcategoryName}
+                      </H.Subcategory>
+                    ))}
+                  </H.SubcategoryWrapper>
+                )}
+            </div>
           </H.Category_All>
 
           <div>
